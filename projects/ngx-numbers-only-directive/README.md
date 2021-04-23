@@ -1,24 +1,34 @@
-# NgxNumbersOnlyDirective
+# NumbersOnlyDirectiveLibrary
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+This project adds a new directive `called NgxNumbersOnly` it assures an HTML Input element will
+only recieve numbers.
 
-## Code scaffolding
+it can be defined to allow negative numbers or disallow them as well as decimal point numbers.
 
-Run `ng generate component component-name --project NgxNumbersOnlyDirective` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project NgxNumbersOnlyDirective`.
-> Note: Don't forget to add `--project NgxNumbersOnlyDirective` or else it will be added to the default project in your `angular.json` file. 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
 
-## Build
 
-Run `ng build NgxNumbersOnlyDirective` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How To Install
 
-## Publishing
+Run `npm i ngx-numbers-only-directive` .
 
-After building your library with `ng build NgxNumbersOnlyDirective`, go to the dist folder `cd dist/ngx-numbers-only-directive` and run `npm publish`.
+## How To Use
 
-## Running unit tests
+In your appModule Import NgxNumbersOnlyDirectiveModule:
+`import { NgxNumbersOnlyDirectiveModule }`
 
-Run `ng test NgxNumbersOnlyDirective` to execute the unit tests via [Karma](https://karma-runner.github.io).
+and add it to your imports array:
+`imports: [NgxNumbersOnlyDirectiveModule]`
 
-## Further help
+Add the directive to an input element. example:`<input NgxNumbersOnly>`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To allow Negative numbers:`<input NgxNumbersOnly [allowSign]=true>`
+
+To allow decimals:`<input NgxNumbersOnly [allowDecimals]=true [allowSign]=true>`
+
+## Contribute
+
+If you enjoyed this code consider donating using paypal:[Donations](https://www.paypal.com/donate?business=8XDLJU4VZYYSS&currency_code=USD)
+
+## Thanks
+The base for this directive was a StackOverflow answer by [Elvis Fernandez](https://stackoverflow.com/users/1886084/elvis-fernandez).
