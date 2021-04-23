@@ -16,7 +16,7 @@
     "typescript",
     "directive"
   ],
-  "license": "",
+  "license": "Mozilla Public License 2.0",
   "peerDependencies": {
     "@angular/common": "^11.2.11",
     "@angular/core": "^11.2.11"
