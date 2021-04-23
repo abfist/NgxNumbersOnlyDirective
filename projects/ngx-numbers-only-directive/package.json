@@ -5,9 +5,9 @@
   "author": {"name": "Gaberiel L"},
   "repository": {
     "type": "git",
-    "url": "https://github.com/abgist/ngx-numbers-only-directive.git"
+    "url": "https://github.com/abgist/NgxNumbersOnlyDirective.git"
   },
-  "bugs": {"url": "https://github.com/abgist/ngx-numbers-only-directive/issues"}
+  "bugs": {"url": "https://github.com/abgist/NgxNumbersOnlyDirective/issues"}
   ,
   "keywords": [
     "angular",
