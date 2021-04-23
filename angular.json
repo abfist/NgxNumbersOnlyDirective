@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "NgxNumbersOnlyDirective": {
+      "projectType": "library",
+      "root": "projects/ngx-numbers-only-directive",
+      "sourceRoot": "projects/ngx-numbers-only-directive/src",
+      "prefix": "Ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-numbers-only-directive/tsconfig.lib.json",
+            "project": "projects/ngx-numbers-only-directive/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-numbers-only-directive/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-numbers-only-directive/src/test.ts",
+            "tsConfig": "projects/ngx-numbers-only-directive/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-numbers-only-directive/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-numbers-only-directive/tsconfig.lib.json",
+              "projects/ngx-numbers-only-directive/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "NumbersOnlyDirectiveLibrary"
