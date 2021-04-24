@@ -135,14 +135,12 @@ export class NgxNumbersOnlyDirective {
     if (lastCharacter == this.decimalSeparator)
       value = value + 0;
 
-
-    
     //remove unnececary leading zeros
-    let signedValue=false;
+    let signedValue = false;
     if (firstCharacter == this.minusSign) {//test for 0's without the sing interuption (avoid -004)
-      signedValue=true;
-      value=value.substring(1);
-      firstCharacter=value.charAt(0);
+      signedValue = true;
+      value = value.substring(1);
+      firstCharacter = value.charAt(0);
     }
     let secondChar = value.charAt(1);
     while (firstCharacter == '0' && (secondChar != '' && secondChar != this.decimalSeparator)) {
@@ -150,16 +148,33 @@ export class NgxNumbersOnlyDirective {
       firstCharacter = value.charAt(0);
       secondChar = value.charAt(1);
     }
-    if (signedValue==true)//return the minus value if required
+    if (signedValue == true)//return the minus value if required
     {
-      value=this.minusSign+value;
+      value = this.minusSign + value;
     }
 
-    //handle -0
-    if (value=='-0')
-    {
-      value='0';
+    //test for excess zeros following the decimal point
+    let valueParts = value.split(this.decimalSeparator);
+    let naturalPart = valueParts?.[0];
+    let decimalPart = valueParts?.[1];
+
+    //remove unnececary zeros after decimal part
+    if (decimalPart != null && /^0+$/.test(decimalPart)) {
+      decimalPart = '0';
+      value = naturalPart + '.' + decimalPart;
     }
+
+    //test for -0.0 or -0 
+    if (value=='-0') {
+      value = '0';
+    }
+    if (value=='-0.0')
+    {
+      value='0.0';
+    }
+    // if (/^-?0(\.0*)*$/.test(value)) {
+    //   value = '0';
+    // }
 
     // test number with regular expression, when
     // number is invalid, replace it with a zero
