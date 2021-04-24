@@ -1,13 +1,13 @@
 {
   "name": "ngx-numbers-only-directive",
   "description": "An angular directive for input element that allows only numeric values",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": {"name": "Gaberiel L"},
   "repository": {
     "type": "git",
-    "url": "https://github.com/abgist/NgxNumbersOnlyDirective.git"
+    "url": "https://github.com/abfist/NgxNumbersOnlyDirective.git"
   },
-  "bugs": {"url": "https://github.com/abgist/NgxNumbersOnlyDirective/issues"}
+  "bugs": {"url": "https://github.com/abfist/NgxNumbersOnlyDirective/issues"}
   ,
   "keywords": [
     "angular",

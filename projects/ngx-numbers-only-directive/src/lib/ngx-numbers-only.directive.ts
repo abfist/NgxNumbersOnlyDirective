@@ -155,6 +155,12 @@ export class NgxNumbersOnlyDirective {
       value=this.minusSign+value;
     }
 
+    //handle -0
+    if (value=='-0')
+    {
+      value='0';
+    }
+
     // test number with regular expression, when
     // number is invalid, replace it with a zero
     let valid: boolean = (new RegExp(regex)).test(value);
